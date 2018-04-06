@@ -3,7 +3,7 @@ const gulp = require('gulp')
 const nodemon = require('nodemon')
 
 gulp.task('server', function(done) {
-    exec('mongod --dbpath ./mongo-data/',(err, stdout, stderr) => {
+    exec('mkdir mongo-data && mongod --dbpath ./mongo-data/',(err, stdout, stderr) => {
         console.log(stdout);
         console.log(stderr);
         done(err)
