@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Câmara de Deputados</title>
+	</head>
+
+	<body>
+		<h1>Deputados Federais do Brasil (55ª Legislatura)</h1>
+		<p>Última atualização: {{createdAt}}</p>
+		<ul>
+		{{#each list}}
+			<li>{{fullName}} - {{party}} (<a href="/api/data/{{siteId}}">Detalhes</a>)</li>
+		{{/each}}
+		</ul>
+	</body>
+</html>

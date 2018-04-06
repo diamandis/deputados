@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{{fullName}}</title>
+	</head>
+
+	<body>
+		<h1>{{fullName}}</h1>        
+
+        <h2>Sobre</h2>
+        {{#main}}
+            <p>Titular</p>
+        {{/main}}
+        <p><b>{{party}}/{{state}}</b></p>
+        <p>Aniversário: {{birthday}}</p>
+        <p>Foto: {{imgUrl}}</p>
+
+        <h2>Informações de Contato</h2>
+        <ul>
+            <li>Telefone: {{contactInformation.phone}}</li>
+            <li>Fax: {{contactInformation.fax}}</li>
+            <li>Email: {{contactInformation.email}}</li>
+        </ul>
+
+        <h2>Atividade Parlamentar</h2>
+        <p><b>Comissões:</b></p>
+        <ul>
+            {{#each commissions}}
+            <li>{{#main}}[Titular] {{/main}}{{acronym}} - {{description}}</li>
+            {{/each}}
+        </ul>
+<!--
+        <p><b>Presença em Plenário (2018)</b></p>
+        <table>
+            {{#each attendanceIn2018}}
+                <tr>
+                    <td>{{description}}</td>
+                    <td>{{days}}</td>
+                    <td>{{percentage}}</td>
+                </tr>
+            {{/each}}
+        </table>
+-->
+        <p><b>Projetos de Lei e Outras Proposições de Sua Autoria</b></p>
+        <table>
+		    <thead>
+			    <tr>
+				    <th><b>Proposição</b></th>
+				    <th><b>Situação</b></th>
+			    </tr>
+            </thead>
+                {{#each recentPropositions}}
+                    <tr>
+                        <td>{{title}}</td>
+                        <td>Status: {{status}}</td>
+                    </tr>    
+                    <tr>
+                        <td>
+                            <p>{{date}}</p>                            
+                        </td>
+                        <td>
+                            <p>{{details}}</p>
+                        </td>
+                    </tr>
+                {{/each}}		    
+        </table>
+	</body>
+</html>
