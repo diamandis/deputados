@@ -91,13 +91,11 @@ const mapDeputyInformation = (body,deputy) => {
     const comissionAlternate = deputyInfo.eq(2).find('li:last-of-type');
 
     comissionMain.find('acronym').each((i,elem)=>{
-        deputy.commissions.push({acronym:$(elem).attr('title'),description:$(elem).text(),main:true})
-        deputy.commissions.push({acronym:$(elem).attr('title'),description:$(elem).text(),main:true})            
+        deputy.commissions.push({description:$(elem).attr('title'),acronym:$(elem).text(),main:true})            
     })
 
     comissionAlternate.find('acronym').each((i,elem)=>{
-        deputy.commissions.push({acronym:$(elem).attr('title'),description:$(elem).text(),main:false})
-        deputy.commissions.push({acronym:$(elem).attr('title'),description:$(elem).text(),main:false})            
+        deputy.commissions.push({description:$(elem).attr('title'),acronym:$(elem).text(),main:false})            
     })
 }         
 
